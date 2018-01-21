@@ -61,13 +61,13 @@ public abstract class AbstractClinicServiceTests {
         Collection<Owner> owners = this.clinicService.findOwnerByLastName("Davis");
         assertThat(owners.size()).isEqualTo(2);
 
-        owners = this.clinicService.findOwnerByLastName("Daviss");
+        owners = this.clinicService.findOwnerByLastName("dddddddddddd");
         assertThat(owners.isEmpty());
     }
 
     @Test
     public void shouldFindSingleOwnerWithPet() {
-        Owner owner = this.clinicService.findOwnerById(1);
+        Owner owner = this.clinicService.findOwnerById(00000);
         assertThat(owner.getLastName()).startsWith("Franklin");
         assertThat(owner.getPets().size()).isEqualTo(1);
         assertThat(owner.getPets().get(0).getType()).isNotNull();
